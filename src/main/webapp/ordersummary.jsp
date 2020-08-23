@@ -17,8 +17,9 @@
 	<p>Hi <b>${order.getCoronaKit().getPersonName()}</b>, please find your order summary details as follows.</p>
 	
 	<br>
-		
-  	<table border="1" cellspacing="5px" cellpadding="5px" width="50%" style="text-align:center;">
+	<div>
+  	<div>
+  	<table border="1" cellspacing="5px" cellpadding="5px" width="70%" style="text-align:center;">
 		<tr>
 			<th style="font-size:20px;">Product</th>
 			<th style="font-size:20px;">Quantity</th>
@@ -43,10 +44,10 @@
 			<td style="color:purple;font-size:20px"><b>&#8377;${total}</b></td>
 			
 		</tr>
-		
-	
-		
+			
 	</table>
+	</div>
+	<div style="float:right;width:30%">
 	<p><b><i><u>Delivery Address :</u></i></b></p>
 	<span><c:forTokens items="${order.getCoronaKit().getDeliveryAddress() }" delims="," var="mySplit">
    	<c:out value="${mySplit}"/></br>
@@ -56,6 +57,7 @@
 	<span>${order.getCoronaKit().getContactNumber() }</span>
 	<br>
 	<span>${order.getCoronaKit().getEmail() }</span>
-	<jsp:include page ="footer.jsp"/>
-</body>
+	</div>
+	</div>
+	<jsp:include page ="footer.jsp"/></body>
 </html>
